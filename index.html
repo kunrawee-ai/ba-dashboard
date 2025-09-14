@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BA Team Strategic Dashboard - แผนกพัฒนาระบบและวิเคราะห์ธุรกิจ</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>🎯 แผนกพัฒนาระบบและวิเคราะห์ธุรกิจ (BA Team)</h1>
+            <p class="subtitle">Strategic Roadmap & Progress Dashboard</p>
+            <div class="last-updated">อัพเดตล่าสุด: <span id="update-time"></span></div>
+        </header>
+
+        <!-- Organizational Objectives -->
+        <section class="objectives-section">
+            <h2>วัตถุประสงค์องค์กร</h2>
+            <div class="objectives-grid">
+                <div class="objective-card primary">
+                    <div class="obj-icon">🎯</div>
+                    <h3>ระยะสั้น (2024)</h3>
+                    <p>พัฒนา "ข้อมูล-โฟลว์งาน-ระบบ (ซอฟต์แวร์-ฮาร์ดแวร์)" ให้มีประสิทธิภาพและไม่ล้าสมัย</p>
+                </div>
+                <div class="objective-card secondary">
+                    <div class="obj-icon">🚀</div>
+                    <h3>ระยะยาว (2025+)</h3>
+                    <p>สร้าง Retail Tech Platform ที่นอกจากใช้เองแล้วยังขายภายนอกได้ด้วย</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gap Analysis Section -->
+        <section class="gap-analysis">
+            <h2>📊 การวิเคราะห์จุดอ่อนและช่องว่างขององค์กร</h2>
+            <div class="gap-container">
+                <div class="gap-card critical">
+                    <div class="gap-header">
+                        <span class="gap-level">วิกฤต</span>
+                        <h3>ด้านข้อมูล (Data)</h3>
+                    </div>
+                    <ul class="gap-list">
+                        <li>❌ ข้อมูลกระจัดกระจาย ไม่มี Single Source of Truth</li>
+                        <li>❌ ไม่มี Real-time Analytics สำหรับ Decision Making</li>
+                        <li>❌ Data Quality ต่ำ (Duplicate 25%, Accuracy 75%)</li>
+                        <li>❌ ขาด Data Governance และ Master Data Management</li>
+                    </ul>
+                    <div class="impact-box">
+                        <strong>ผลกระทบ:</strong> ตัดสินใจช้า, ข้อมูลขัดแย้ง, เสียโอกาสทางธุรกิจ ~5M/ปี
+                    </div>
+                </div>
+
+                <div class="gap-card high">
+                    <div class="gap-header">
+                        <span class="gap-level">สูง</span>
+                        <h3>ด้านกระบวนการ (Process)</h3>
+                    </div>
+                    <ul class="gap-list">
+                        <li>⚠️ Manual Process สูง 60% ของงานทั้งหมด</li>
+                        <li>⚠️ ไม่มี Process Automation ในงาน Routine</li>
+                        <li>⚠️ Workflow ไม่เป็นมาตรฐาน แต่ละสาขาทำไม่เหมือนกัน</li>
+                        <li>⚠️ ขาด Process Monitoring & Optimization</li>
+                    </ul>
+                    <div class="impact-box">
+                        <strong>ผลกระทบ:</strong> เสียเวลา 1,200 ชม./เดือน, Error Rate 15%
+                    </div>
+                </div>
+
+                <div class="gap-card medium">
+                    <div class="gap-header">
+                        <span class="gap-level">ปานกลาง</span>
+                        <h3>ด้านระบบ (System)</h3>
+                    </div>
+                    <ul class="gap-list">
+                        <li>⚠️ ระบบแยกส่วน ไม่ integrate กัน</li>
+                        <li>⚠️ Legacy System อายุ 5+ ปี (40% ของระบบทั้งหมด)</li>
+                        <li>⚠️ ไม่มี API Standard สำหรับการเชื่อมต่อ</li>
+                        <li>⚠️ Mobile/Omnichannel Experience ยังไม่สมบูรณ์</li>
+                    </ul>
+                    <div class="impact-box">
+                        <strong>ผลกระทบ:</strong> ค่าบำรุงรักษาสูง 300K/เดือน, User Experience แย่
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scope Division Section -->
+        <section class="scope-section">
+            <h2>🎯 การแบ่ง Scope งานตามจุดอ่อนที่พบ</h2>
+            
+            <div class="scope-container">
+                <!-- Scope 1: Data Foundation -->
+                <div class="scope-card" data-scope="data">
+                    <div class="scope-header">
+                        <h3>Scope 1: Data Foundation & Analytics</h3>
+                        <span class="scope-priority">Priority: CRITICAL</span>
+                    </div>
+                    
+                    <div class="scope-objective">
+                        <strong>เป้าหมาย:</strong> สร้าง Single Source of Truth และ Real-time Analytics
+                    </div>
+
+                    <div class="jobs-container">
+                        <h4>Jobs ในหมวดนี้:</h4>
+                        <div class="job-grid">
+                            <div class="job-item focus">
+                                <div class="job-header">
+                                    <span class="job-name">📊 Master Data Management</span>
+                                    <span class="job-status">🔴 โฟกัส Q3</span>
+                                </div>
+                                <div class="job-details">
+                                    <p><strong>เหตุผลที่เลือก:</strong> Foundation สำคัญที่สุด ต้องทำก่อนจึงจะทำอย่างอื่นได้</p>
+                                    <p><strong>ผลลัพธ์ที่คาด:</strong> Data Accuracy 99%, Zero Duplicate</p>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 80%"></div>
+                                    </div>
+                                    <span class="progress-text">80% Complete</span>
+                                </div>
+                            </div>
+
+                            <div class="job-item focus">
+                                <div class="job-header">
+                                    <span class="job-name">📈 Real-time Analytics Platform</span>
+                                    <span class="job-status">🔴 โฟกัส Q3</span>
+                                </div>
+                                <div class="job-details">
+                                    <p><strong>เหตุผลที่เลือก:</strong> ผู้บริหารต้องการ Dashboard สำหรับ Decision Making</p>
+                                    <p><strong>ผลลัพธ์ที่คาด:</strong> Dashboard Update < 1 sec, 50+ KPIs</p>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 60%"></div>
+                                    </div>
+                                    <span class="progress-text">60% In Progress</span>
+                                </div>
+                            </div>
+
+                            <div class="job-item">
+                                <div class="job-header">
+                                    <span class="job-name">🤖 AI/ML Pipeline</span>
+                                    <span class="job-status">📅 Q4</span>
+                                </div>
+                                <div class="job-details">
+                                    <p><strong>รอ:</strong> ต้องมี Clean Data ก่อน</p>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 20%"></div>
+                                    </div>
+                                    <span class="progress-text">20% Planning</span>
+                                </div>
+                            </div>
+
+                            <div class="job-item">
+                                <div class="job-header">
+                                    <span class="job-name">📊 Data Lake Architecture</span>
+                                    <span class="job-status">📅 Q4</span>
+                                </div>
+                                <div class="job-details">
+                                    <p><strong>รอ:</strong> Infrastructure preparation</p>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 15%"></div>
+                                    </div>
+                                    <span class="progress-text">15% Research</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scope 2: Process Automation -->
+                <div class="scope-card" data-scope="process">
+                    <div class="scope-header">
+                        <h3>Scope 2: Process Automation & Optimization</h3>
+                        <span class="scope-priority">Priority: HIGH</span>
+                    </div>
+                    
+                    <div class="scope-objective">
+                        <strong>เป้าหมาย:</strong> ลด Manual Process 60% → 20% และสร้าง Standard Workflow
+                    </div>
+
+                    <div class="jobs-container">
+                        <h4>Jobs ในหมวดนี้:</h4>
+                        <div class="job-grid">
+                            <div class="job-item focus">
+                                <div class="job-header">
+                                    <span class="job-name">📦 Inventory Automation</span>
+                                    <span class="job-status">🟡 โฟกัส Q3</span>
+                                </div>
+                                <div class="job-details">
+                                    <p><strong>เหตุผลที่เลือก:</strong> Pain Point ใหญ่ของ Warehouse (Stock-out 15%/เดือน)</p>
+                                    <p><strong>ผลลัพธ์ที่คาด:</strong> Auto-reorder, ลด Stock-out 80%</p>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 70%"></div>
+                                    </div>
+                                    <span class="progress-text">70% In Progress</span>
+                                </div>
+                            </div>
+
+                            <div class="job-item">
+                                <div class="job-header">
+                                    <span class="job-name">🔄 Order Management Flow</span>
+                                    <span class="job-status">✅ เสร็จแล้ว</span>
+                                </div>
+                                <div class="job-details">
+                                    <p><strong>ผลลัพธ์:</strong> ประหยัดเวลา 2 ชม./วัน</p>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 100%"></div>
+                                    </div>
+                                    <span class="progress-text">100% Complete</span>
+                                </div>
+                            </div>
+
+                            <div class="job-item">
+                                <div class="job-header">
+                                    <span class="job-name">🗺️ Customer Journey Mapping</span>
+                                    <span class="job-status">📅 Q4</span>
+                                </div>
+                                <div class="job-details">
+                                    <p><strong>รอ:</strong> ต้องมี Analytics Platform ก่อน</p>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 40%"></div>
+                                    </div>
+                                    <span class="progress-text">40% Design Phase</span>
+                                </div>
+                            </div>
+
+                            <div class="job-item">
+                                <div class="job-header">
+                                    <span class="job-name">⚙️ RPA Implementation</span>
+                                    <span class="job-status">📅 2025</span>
+                                </div>
+                                <div class="job-details">
+                                    <p><strong>รอ:</strong> Process Standardization</p>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 5%"></div>
+                                    </div>
+                                    <span class="progress-text">5% Research</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scope 3: System Integration -->
+                <div class="scope-card" data-scope="system">
+                    <div class="scope-header">
+                        <h3>Scope 3: System Integration & Modernization</h3>
+                        <span class="scope-priority">Priority: MEDIUM</span>
+                    </div>
+                    
+                    <div class="scope-objective">
+                        <strong>เป้าหมาย:</strong> สร้าง Unified Platform และ Modernize Legacy Systems
+                    </div>
+
+                    <div class="jobs-container">
+                        <h4>Jobs ในหมวดนี้:</h4>
+                        <div class="job-grid">
+                            <div class="job-item">
+                                <div class="job-header">
+                                    <span class="job-name">💳 POS System Upgrade</span>
+                                    <span class="job-status">✅ เสร็จแล้ว</span>
+                                </div>
+                                <div class="job-details">
+                                    <p><strong>ผลลัพธ์:</strong> ลดเวลา Checkout 35%, Error -80%</p>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 100%"></div>
+                                    </div>
+                                    <span class="progress-text">100% Complete</span>
+                                </div>
+                            </div>
+
+                            <div class="job-item focus">
+                                <div class="job-header">
+                                    <span class="job-name">🛒 E-commerce Integration</span>
+                                    <span class="job-status">🟡 โฟกัส Q3-Q4</span>
+                                </div>
+                                <div class="job-details">
+                                    <p><strong>เหตุผลที่เลือก:</strong> Online Sales Growth 200% YoY ต้องรองรับ</p>
+                                    <p><strong>ผลลัพธ์ที่คาด:</strong> Omnichannel Experience</p>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 50%"></div>
+                                    </div>
+                                    <span class="progress-text">50% Development</span>
+                                </div>
+                            </div>
+
+                            <div class="job-item">
+                                <div class="job-header">
+                                    <span class="job-name">🔌 API Gateway</span>
+                                    <span class="job-status">📅 Q4</span>
+                                </div>
+                                <div class="job-details">
+                                    <p><strong>Dependency:</strong> ต้องทำเพื่อ Integration</p>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 30%"></div>
+                                    </div>
+                                    <span class="progress-text">30% Architecture</span>
+                                </div>
+                            </div>
+
+                            <div class="job-item">
+                                <div class="job-header">
+                                    <span class="job-name">📱 Mobile App</span>
+                                    <span class="job-status">📅 Q4-Q1</span>
+                                </div>
+                                <div class="job-details">
+                                    <p><strong>รอ:</strong> API Gateway & E-commerce</p>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 25%"></div>
+                                    </div>
+                                    <span class="progress-text">25% UI/UX Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Priority Decision Matrix -->
+        <section class="priority-matrix">
+            <h2>📊 เมทริกซ์การตัดสินใจจัดลำดับความสำคัญ</h2>
+            
+            <div class="matrix-explanation">
+                <p><strong>หลักการจัดลำดับ:</strong> ใช้ 4 มิติในการให้คะแนน (เต็ม 10 คะแนนต่อมิติ)</p>
+            </div>
+
+            <table class="priority-table">
+                <thead>
+                    <tr>
+                        <th>โครงการ</th>
+                        <th>ผลกระทบทางธุรกิจ</th>
+                        <th>ความจำเป็นทางเทคนิค</th>
+                        <th>ทรัพยากรที่ใช้</th>
+                        <th>ความเสี่ยง</th>
+                        <th>รวม</th>
+                        <th>ลำดับ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="priority-critical">
+                        <td><strong>Master Data Management</strong></td>
+                        <td>10/10<br><small>Foundation ของทุกอย่าง</small></td>
+                        <td>10/10<br><small>ต้องทำก่อนทุกอย่าง</small></td>
+                        <td>7/10<br><small>ทีม 3 คน 3 เดือน</small></td>
+                        <td>2/10<br><small>ความเสี่ยงต่ำ</small></td>
+                        <td class="total-score">29</td>
+                        <td><span class="priority-badge p1">P1</span></td>
+                    </tr>
+                    <tr class="priority-critical">
+                        <td><strong>Real-time Analytics</strong></td>
+                        <td>9/10<br><small>ผู้บริหารต้องการมาก</small></td>
+                        <td>8/10<br><small>ต้องมี Clean Data</small></td>
+                        <td>6/10<br><small>ทีม 3 คน + Tools</small></td>
+                        <td>3/10<br><small>Complexity ปานกลาง</small></td>
+                        <td class="total-score">26</td>
+                        <td><span class="priority-badge p1">P1</span></td>
+                    </tr>
+                    <tr class="priority-high">
+                        <td><strong>Inventory Automation</strong></td>
+                        <td>8/10<br><small>ลด Stock-out มาก</small></td>
+                        <td>6/10<br><small>ต้อง Integrate WMS</small></td>
+                        <td>7/10<br><small>ทีม 2 คน + Vendor</small></td>
+                        <td>4/10<br><small>Vendor dependency</small></td>
+                        <td class="total-score">25</td>
+                        <td><span class="priority-badge p1">P1</span></td>
+                    </tr>
+                    <tr class="priority-medium">
+                        <td><strong>E-commerce Integration</strong></td>
+                        <td>7/10<br><small>Online growth 200%</small></td>
+                        <td>5/10<br><small>ต้องมี API first</small></td>
+                        <td>8/10<br><small>ทีม 2 คน 4 เดือน</small></td>
+                        <td>5/10<br><small>Platform complexity</small></td>
+                        <td class="total-score">25</td>
+                        <td><span class="priority-badge p2">P2</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>API Gateway</strong></td>
+                        <td>5/10<br><small>Indirect benefit</small></td>
+                        <td>9/10<br><small>Core for integration</small></td>
+                        <td>4/10<br><small>ทีม 1 คน</small></td>
+                        <td>2/10<br><small>Standard tech</small></td>
+                        <td class="total-score">20</td>
+                        <td><span class="priority-badge p2">P2</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mobile App</strong></td>
+                        <td>6/10<br><small>Nice to have</small></td>
+                        <td>4/10<br><small>ต้องมี Backend</small></td>
+                        <td>9/10<br><small>ทีม 3 คน 6 เดือน</small></td>
+                        <td>3/10<br><small>UX challenge</small></td>
+                        <td class="total-score">22</td>
+                        <td><span class="priority-badge p3">P3</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Resource Allocation -->
+        <section class="resource-section">
+            <h2>👥 การจัดสรรทรัพยากรตาม Priority</h2>
+            
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h3>Sprint ปัจจุบัน (Sep 1-30)</h3>
+                    <div class="team-allocation">
+                        <div class="allocation-item">
+                            <span class="project">Master Data Management</span>
+                            <div class="people">👤👤👤</div>
+                            <span class="count">3 คน</span>
+                        </div>
+                        <div class="allocation-item">
+                            <span class="project">Real-time Analytics</span>
+                            <div class="people">👤👤👤</div>
+                            <span class="count">3 คน</span>
+                        </div>
+                        <div class="allocation-item">
+                            <span class="project">Inventory Automation</span>
+                            <div class="people">👤👤</div>
+                            <span class="count">2 คน</span>
+                        </div>
+                        <div class="allocation-item">
+                            <span class="project">E-commerce Integration</span>
+                            <div class="people">👤👤</div>
+                            <span class="count">2 คน</span>
+                        </div>
+                        <div class="allocation-item">
+                            <span class="project">Support & Maintenance</span>
+                            <div class="people">👤</div>
+                            <span class="count">1 คน</span>
+                        </div>
+                    </div>
+                    <div class="total-resources">
+                        <strong>รวม: 11 คน</strong> (เต็มทีม)
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <h3>Sprint ถัดไป (Oct 1-31)</h3>
+                    <div class="team-allocation">
+                        <div class="allocation-item planned">
+                            <span class="project">Master Data → Maintenance</span>
+                            <div class="people">👤</div>
+                            <span class="count">1 คน</span>
+                        </div>
+                        <div class="allocation-item planned">
+                            <span class="project">Real-time Analytics</span>
+                            <div class="people">👤👤</div>
+                            <span class="count">2 คน</span>
+                        </div>
+                        <div class="allocation-item planned">
+                            <span class="project">Inventory → Production</span>
+                            <div class="people">👤</div>
+                            <span class="count">1 คน</span>
+                        </div>
+                        <div class="allocation-item planned">
+                            <span class="project">E-commerce Integration</span>
+                            <div class="people">👤👤👤</div>
+                            <span class="count">3 คน</span>
+                        </div>
+                        <div class="allocation-item planned">
+                            <span class="project">API Gateway (ใหม่)</span>
+                            <div class="people">👤👤</div>
+                            <span class="count">2 คน</span>
+                        </div>
+                        <div class="allocation-item planned">
+                            <span class="project">Mobile App Design</span>
+                            <div class="people">👤👤</div>
+                            <span class="count">2 คน</span>
+                        </div>
+                    </div>
+                    <div class="shift-note">
+                        📌 Shift ทีมจาก completed projects ไปทำ new priorities
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Tracking -->
+        <section class="impact-section">
+            <h2>📈 ผลกระทบและความคืบหน้า</h2>
+            
+            <div class="impact-timeline">
+                <div class="timeline-item completed">
+                    <div class="timeline-marker">✅</div>
+                    <div class="timeline-content">
+                        <h4>Q2 2024 - เสร็จสิ้นแล้ว</h4>
+                        <ul>
+                            <li><strong>POS System:</strong> ลดเวลา checkout 35%, ลด error 80%</li>
+                            <li><strong>Order Flow:</strong> ประหยัดเวลา 2 ชม./วัน, ลด manual 60%</li>
+                            <li><strong>Invoice Automation:</strong> ประมวลผลเร็วขึ้น 70%</li>
+                        </ul>
+                        <div class="impact-value">💰 ประหยัด: 850K/เดือน</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item current">
+                    <div class="timeline-marker">🔄</div>
+                    <div class="timeline-content">
+                        <h4>Q3 2024 - กำลังดำเนินการ</h4>
+                        <ul>
+                            <li><strong>Master Data (80%):</strong> Clean data, zero duplicate soon</li>
+                            <li><strong>Analytics (60%):</strong> Dashboard pilot กับ Sales dept</li>
+                            <li><strong>Inventory (70%):</strong> Testing auto-reorder algorithm</li>
+                        </ul>
+                        <div class="impact-value">🎯 Target: 1.2M saved by Q3 end</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item future">
+                    <div class="timeline-marker">📅</div>
+                    <div class="timeline-content">
+                        <h4>Q4 2024 - แผนงาน</h4>
+                        <ul>
+                            <li><strong>Complete Analytics:</strong> Roll-out ทุกแผนก</li>
+                            <li><strong>E-commerce Live:</strong> Unified online-offline</li>
+                            <li><strong>API Gateway:</strong> Enable 3rd party integration</li>
+                        </ul>
+                        <div class="impact-value">📊 Projection: System efficiency 85%</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item future">
+                    <div class="timeline-marker">🚀</div>
+                    <div class="timeline-content">
+                        <h4>Q1 2025 - Retail Tech MVP</h4>
+                        <ul>
+                            <li><strong>Package Solution:</strong> SaaS ready</li>
+                            <li><strong>Pilot Customer:</strong> 3 partners testing</li>
+                            <li><strong>Revenue Stream:</strong> New business model</li>
+                        </ul>
+                        <div class="impact-value">💎 New Revenue: 5M/year projected</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Decisions Needed -->
+        <section class="decisions-section">
+            <h2>⚡ การตัดสินใจที่ต้องการจากผู้บริหาร</h2>
+            
+            <div class="decisions-grid">
+                <div class="decision-card urgent">
+                    <div class="decision-header">
+                        <span class="urgency">เร่งด่วน</span>
+                        <span class="deadline">ภายใน 15 ก.ย.</span>
+                    </div>
+                    <h4>อนุมัติงบ Cloud Infrastructure</h4>
+                    <p>สำหรับ Real-time Analytics Platform</p>
+                    <div class="decision-details">
+                        <strong>งบประมาณ:</strong> 150K/เดือน<br>
+                        <strong>ผลตอบแทน:</strong> ROI 6 เดือน<br>
+                        <strong>ความเสี่ยงหากไม่ทำ:</strong> Delay analytics 2 เดือน
+                    </div>
+                </div>
+
+                <div class="decision-card high">
+                    <div class="decision-header">
+                        <span class="urgency">สำคัญ</span>
+                        <span class="deadline">ภายใน 20 ก.ย.</span>
+                    </div>
+                    <h4>เพิ่มทีม Data Scientist 2 คน</h4>
+                    <p>สำหรับ Analytics และ AI/ML Pipeline</p>
+                    <div class="decision-details">
+                        <strong>งบประมาณ:</strong> 180K/เดือน<br>
+                        <strong>เหตุผล:</strong> Skill gap ในทีมปัจจุบัน<br>
+                        <strong>Timeline:</strong> Onboard ภายใน Oct
+                    </div>
+                </div>
+
+                <div class="decision-card medium">
+                    <div class="decision-header">
+                        <span class="urgency">ปานกลาง</span>
+                        <span class="deadline">ภายใน 30 ก.ย.</span>
+                    </div>
+                    <h4>เลือก E-commerce Platform</h4>
+                    <p>Shopify vs Custom Development</p>
+                    <div class="decision-details">
+                        <strong>Option A:</strong> Shopify (Fast, 80K/mo)<br>
+                        <strong>Option B:</strong> Custom (Flexible, 200K initial)<br>
+                        <strong>คำแนะนำ:</strong> Custom for long-term
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>BA Team Dashboard | Strategic Planning & Execution Tracking</p>
+                <p>Contact: ba-team@company.com | Ext: 1234</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
